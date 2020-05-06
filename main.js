@@ -45,7 +45,7 @@ for(var i in arrayOfItems){
 
 
 var a= arrayOfItems[i]
-await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?dataType=Branded&api_key=wZ1Pb65Z9edyuzNYEhzfP1hktg5jygbtZbqN4YJf&query=${a}`)
+await axios.get(`https://api.nal.usda.gov/fdc/v1/foods/search?dataType=Branded&api_key=dJ8aIYIXXO2r3hykzELHmhx3maH4hAuD0tvfSg04&query=${a}`)
 .then((response)=>{
 
 var totalNutri=response.data.foods[0].foodNutrients
