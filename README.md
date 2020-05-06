@@ -2,7 +2,7 @@
 A Free, Simple, Recipe Nutrition Calculator
 ## What?
 
-Just a simple tool to calculate all the basic nutrients of a recipe! Useful for chefs, dietitians, athletes, food industries, or for anyone who want to know exactly what he eat!
+Just a simple tool to calculate all the basic nutrients of a recipe! Useful for chefs, dietians, athletes, food industries, or for anyone who want to know exactly what he eat!
 
 ## How?
 
