@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nutrition</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <link rel="stylesheet" href="main.css">
+
+
+<div id="app">
+    <!-- Recipe Input and Button-->
+    <div v-if="show" id="recipeInput" class="p-4 mx-auto mt-5 text-left border" style="width:380px">
+      <h1>Nutrient Calculator</h1>
+      <textarea v-model="recipe" rows="10" style="background-color:#fcf8f7;" placeholder="Enter recipe like
+      apple
+      Orange
+      banana
+      " class="border-0 w-100 p-3"></textarea>
+      <label for="noOfServe">Select No of Servings</label>
+      <div class="selectWrapper ">
+      <select id="noOfServe" v-model="noServe">
+        <option value=1 selected>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
+      </select>
+      </div>
+    <!-- Recipe analyse button -->
+    <button v-on:click="getNutri(); show=!show" class="btn btn-dark border-0 mt-3">Analyse Recipe</button>
+    </div>
+    <!-- Recipe input field and button OVER -->
+    
+    <!-- Nutrition Label Start-->
+    <!--   Headings   -->
+      <div v-if="!show" id="nutritionLabel" class="p-4 mx-auto mt-5 text-left border" style="width:380px">
+    
+        <h1 class="">Nutrition <br>Facts</h1>
+        <h6>Servings : {{this.noServe}}</h6>
+        <hr class="pt-3">
+        <h6>Amount per serving</h6>
+    <!-- Table -->
+        <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col"><h1>Calories</h1></th>
+          <th scope="col"><h1>{{this.nutrition.Energy}}</h1></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>Total Fat</strong> {{this.nutrition.TotalFat +"g"}}</td>
+        </tr>
+        <tr>
+          <td><strong>Cholesterol </strong> {{this.nutrition.Cholesterol +"g"}}</td>
+        </tr>
+        <tr>
+          <td><strong>Sodium </strong> {{this.nutrition.Sodium +"mg"}}</td>
+        </tr>
+        <tr>
+          <td><strong>Total Carbohydrate </strong> {{this.nutrition.Carbohydrate +"g"}}</td>
+        </tr>
+        <tr>
+          <td><strong>Protein </strong> {{this.nutrition.Protein +"g"}}</td>
+        </tr>
+        <br>
+        <tr>
+          <td><small>Calcium </small> {{this.nutrition.CalciumCa +"mg"}}</td>
+        </tr>
+        <tr>
+          <td><small>Vitamin C </small> {{this.nutrition.VitaminC+"mg"}}</td>
+        </tr>
+        <tr>
+          <td><small>Iron </small> {{this.nutrition.Iron+"mg"}}</td>
+        </tr>
+      </tbody>
+      </table>
+    <!-- button for clearing all stored values and to show Recipe Input field -->
+      <button v-on:click="clearAll(); show=!show" class="btn btn-dark border-0 mt-3">New Recipe</button>
+    
+        
+      </div>
+    
+    </div>
+
+<!-- Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="main.js"></script>
+
+
+    
+</body>
+</html>
